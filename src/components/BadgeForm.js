@@ -4,11 +4,6 @@ class BadgeForm extends React.Component {
   handleClick = (e) => {
     console.log("Button clicked");
   };
-  // handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log("Form was submitted");
-  //   console.log(this.state);
-  // };
   render() {
     return (
       <div>
@@ -67,6 +62,9 @@ class BadgeForm extends React.Component {
           <button onClick={this.handleClick} className="btn btn-primary">
             Save
           </button>
+          {this.props.error && (
+            <p className="text-danger">{this.props.error.message}</p>
+          )}
         </form>
       </div>
     );

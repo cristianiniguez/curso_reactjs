@@ -448,6 +448,22 @@
       "jobTitle": "Ingeniero Industrial",
       "twitter": "criniguez",
       "id": "HI81Cgr"
+    },
+    {
+      "firstName": "Mary",
+      "lastName": "Saucedo",
+      "email": "marysaucedo@example.com",
+      "jobTitle": "Ingeniera Industrial",
+      "twitter": "marysaucedo",
+      "id": "4NelaJo"
+    },
+    {
+      "firstName": "Dario",
+      "lastName": "Rojas",
+      "email": "drojas@gmail.com",
+      "jobTitle": "Ingeniero Industrial",
+      "twitter": "drojas",
+      "id": "MS7JpT1"
     }
   ]
 }
