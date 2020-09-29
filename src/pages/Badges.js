@@ -6,6 +6,7 @@ import confLogo from "../images/badge-header.svg";
 import BadgesList from "../components/BadgesList";
 import PageLoading from "../components/PageLoading";
 import PageError from "../components/PageError";
+import MiniLoader from "../components/MiniLoader";
 
 import api from "../api";
 
@@ -17,6 +18,10 @@ class Badges extends React.Component {
   };
   componentDidMount() {
     this.fetchData();
+    this.intervalId = setInterval(this.fetchData, 5000);
+  }
+  componentWillUnmount() {
+    clearInterval(this.intervalId);
   }
   fetchData = async () => {
     this.setState({ loading: true, error: null });
@@ -28,7 +33,7 @@ class Badges extends React.Component {
     }
   };
   render() {
-    if (this.state.loading) {
+    if (this.state.loading && !this.state.data) {
       return <PageLoading />;
     }
     if (this.state.error) {
@@ -58,6 +63,7 @@ class Badges extends React.Component {
               <BadgesList badges={this.state.data} />
             </div>
           </div>
+          {this.state.loading && <MiniLoader />}
         </div>
       </React.Fragment>
     );
